@@ -22,7 +22,7 @@ Aşağıda uygulama içerisinden alınan birkaç ekran görüntüsünü bulabili
 ![Imgur0](https://i.imgur.com/q5C7H7s.png)
 ![Imgur1](https://i.imgur.com/qYyqwnQl.jpg)
 
-ESPBug'a bağlandığınız zaman, **espportal** sayfasına gidin. Bir user-pass prompt'u ile karşılaşacaksınız. Varsayılan kullanıcı adı şifre kombinasyonu `Kullanıcı adı: espbug` ve `Şifre: password` şeklindedir. Buradan sonra ana sayfaya yönlendirileceksiniz
+ESPBug'a bağlandığınız zaman, **espportal** sayfasına gidin (e.g. `http://espbug.com/espportal`). Bir user-pass prompt'u ile karşılaşacaksınız. Varsayılan kullanıcı adı şifre kombinasyonu `Kullanıcı adı: espbug` ve `Şifre: password` şeklindedir. Buradan sonra ana sayfaya yönlendirileceksiniz
 
 ![Imgur2](https://i.imgur.com/NgNZkYol.jpg)
 ![Imgur3](https://i.imgur.com/OgYxvRyl.jpg)
