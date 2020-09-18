@@ -22,15 +22,20 @@ Aşağıda uygulama içerisinden alınan birkaç ekran görüntüsünü bulabili
 ![Imgur0](https://i.imgur.com/q5C7H7s.png)
 ![Imgur1](https://i.imgur.com/qYyqwnQl.jpg)
 
+
 ESPBug'a bağlandığınız zaman, **espportal** sayfasına gidin (e.g. `http://espbug.com/espportal`). Bir user-pass prompt'u ile karşılaşacaksınız. Varsayılan kullanıcı adı şifre kombinasyonu `Kullanıcı adı: espbug` ve `Şifre: password` şeklindedir. Buradan sonra ana sayfaya yönlendirileceksiniz
+
 
 ![Imgur2](https://i.imgur.com/NgNZkYol.jpg)
 ![Imgur3](https://i.imgur.com/OgYxvRyl.jpg)
 
+
 Saldırıyı başlatmak için ayarlara gidip bazı düzenlemeler yapmanız gerekir. İhtiyacınız olacak tüm ayarlar ve açıklamaları aşağıda verilmiştir
+
 
 ![Imgur4](https://i.imgur.com/lxz6Apwl.jpg)
 ![Imgur5](https://i.imgur.com/LeBXPztl.jpg)
+
 
  - Şapka rengi (seçimler: **Black Hat** veya **White Hat**): Bu seçenek size bir hırsız mı yoksa bir fedai mi olacağınız hakkında seçim hakkı tanır. **White Hat** opsiyonu kullanıcıyı yaşadığı şeyin ne olduğunu ve phishing saldırılarından nasıl korunabileceğini anlatan bir siteye yönlendirir. **Black Hat** opsiyonu kullanıcı kimlik bilgilerini girdiği anda kullanıcının bağlantısını keser.
 
