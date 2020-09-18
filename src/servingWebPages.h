@@ -357,6 +357,98 @@ void startAP() {
       sendProgmem(mainjs, sizeof(mainjs), W_JS);
     });
 
+	server.on(String(F("/captive.html")).c_str(), HTTP_GET, [](){
+	  sendProgmem(captivehtml, sizeof(captivehtml), W_HTML);
+	});
+	server.on(String(F("/captive500.html")).c_str(), HTTP_GET, [](){
+	  sendProgmem(captive500html, sizeof(captive500html), W_HTML);
+	});
+	server.on(String(F("/firmware.html")).c_str(), HTTP_GET, [](){
+	  sendProgmem(firmwarehtml, sizeof(firmwarehtml), W_HTML);
+	});
+	server.on(String(F("/index.html")).c_str(), HTTP_GET, [](){
+	  sendProgmem(indexhtml, sizeof(indexhtml), W_HTML);
+	});
+	server.on(String(F("/redirect_whitehat.html")).c_str(), HTTP_GET, [](){
+	  sendProgmem(redirect_whitehathtml, sizeof(redirect_whitehathtml), W_HTML);
+	});
+	server.on(String(F("/settings.html")).c_str(), HTTP_GET, [](){
+	  sendProgmem(settingshtml, sizeof(settingshtml), W_HTML);
+	});
+	server.on(String(F("/systemlogs.html")).c_str(), HTTP_GET, [](){
+	  sendProgmem(systemlogshtml, sizeof(systemlogshtml), W_HTML);
+	});
+	server.on(String(F("/viewlogs.html")).c_str(), HTTP_GET, [](){
+	  sendProgmem(viewlogshtml, sizeof(viewlogshtml), W_HTML);
+	});
+	server.on(String(F("/whitehat.html")).c_str(), HTTP_GET, [](){
+	  sendProgmem(whitehathtml, sizeof(whitehathtml), W_HTML);
+	});
+	server.on(String(F("/captive.css")).c_str(), HTTP_GET, [](){
+	  sendProgmem(captivecss, sizeof(captivecss), W_CSS);
+	});
+	server.on(String(F("/main.css")).c_str(), HTTP_GET, [](){
+	  sendProgmem(maincss, sizeof(maincss), W_CSS);
+	});
+	server.on(String(F("/milligram.min.css")).c_str(), HTTP_GET, [](){
+	  sendProgmem(milligrammincss, sizeof(milligrammincss), W_CSS);
+	});
+	server.on(String(F("/normalize.min.css")).c_str(), HTTP_GET, [](){
+	  sendProgmem(normalizemincss, sizeof(normalizemincss), W_CSS);
+	});
+	server.on(String(F("/jquery.slim.min.js")).c_str(), HTTP_GET, [](){
+	  sendProgmem(jqueryslimminjs, sizeof(jqueryslimminjs), W_JS);
+	});
+	server.on(String(F("/main.js")).c_str(), HTTP_GET, [](){
+	  sendProgmem(mainjs, sizeof(mainjs), W_JS);
+	});
+
+	server.on(String(F("/captive.html")).c_str(), HTTP_GET, [](){
+	  sendProgmem(captivehtml, sizeof(captivehtml), W_HTML);
+	});
+	server.on(String(F("/captive500.html")).c_str(), HTTP_GET, [](){
+	  sendProgmem(captive500html, sizeof(captive500html), W_HTML);
+	});
+	server.on(String(F("/firmware.html")).c_str(), HTTP_GET, [](){
+	  sendProgmem(firmwarehtml, sizeof(firmwarehtml), W_HTML);
+	});
+	server.on(String(F("/index.html")).c_str(), HTTP_GET, [](){
+	  sendProgmem(indexhtml, sizeof(indexhtml), W_HTML);
+	});
+	server.on(String(F("/redirect_whitehat.html")).c_str(), HTTP_GET, [](){
+	  sendProgmem(redirect_whitehathtml, sizeof(redirect_whitehathtml), W_HTML);
+	});
+	server.on(String(F("/settings.html")).c_str(), HTTP_GET, [](){
+	  sendProgmem(settingshtml, sizeof(settingshtml), W_HTML);
+	});
+	server.on(String(F("/systemlogs.html")).c_str(), HTTP_GET, [](){
+	  sendProgmem(systemlogshtml, sizeof(systemlogshtml), W_HTML);
+	});
+	server.on(String(F("/viewlogs.html")).c_str(), HTTP_GET, [](){
+	  sendProgmem(viewlogshtml, sizeof(viewlogshtml), W_HTML);
+	});
+	server.on(String(F("/whitehat.html")).c_str(), HTTP_GET, [](){
+	  sendProgmem(whitehathtml, sizeof(whitehathtml), W_HTML);
+	});
+	server.on(String(F("/captive.css")).c_str(), HTTP_GET, [](){
+	  sendProgmem(captivecss, sizeof(captivecss), W_CSS);
+	});
+	server.on(String(F("/main.css")).c_str(), HTTP_GET, [](){
+	  sendProgmem(maincss, sizeof(maincss), W_CSS);
+	});
+	server.on(String(F("/milligram.min.css")).c_str(), HTTP_GET, [](){
+	  sendProgmem(milligrammincss, sizeof(milligrammincss), W_CSS);
+	});
+	server.on(String(F("/normalize.min.css")).c_str(), HTTP_GET, [](){
+	  sendProgmem(normalizemincss, sizeof(normalizemincss), W_CSS);
+	});
+	server.on(String(F("/jquery.slim.min.js")).c_str(), HTTP_GET, [](){
+	  sendProgmem(jqueryslimminjs, sizeof(jqueryslimminjs), W_JS);
+	});
+	server.on(String(F("/main.js")).c_str(), HTTP_GET, [](){
+	  sendProgmem(mainjs, sizeof(mainjs), W_JS);
+	});
+
     server.onNotFound([]() {
       client_status();
       if (esportalenabled) {
