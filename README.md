@@ -5,7 +5,7 @@
 [![Build Status](https://travis-ci.com/guanicoe/ESPBug_PIO.svg?branch=master)](https://travis-ci.com/guanicoe/ESPBug_PIO)
 
 
-# Restructure of the initial project [https://github.com/willmendil/ESPBug](https://github.com/willmendil/ESPBug) to use plateformIO
+# TEST Restructure of the initial project [https://github.com/willmendil/ESPBug](https://github.com/willmendil/ESPBug) to use plateformIO
 The idea is to make the development easier.
 
 # ESPBug
