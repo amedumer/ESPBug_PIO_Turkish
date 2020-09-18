@@ -5,92 +5,73 @@
 [![Build Status](https://travis-ci.com/guanicoe/ESPBug_PIO.svg?branch=master)](https://travis-ci.com/guanicoe/ESPBug_PIO)
 
 
-# Restructure of the initial project [https://github.com/willmendil/ESPBug](https://github.com/willmendil/ESPBug) to use plateformIO
-The idea is to make the development easier.
+# Bu proje willmendil'in orijinal ESPBug projesinin Türkçe çeviri versiyonudur.
 
 # ESPBug
+ESPBug, ESP8266 tabanlı (NodeMCU gibi) kartlarda çalışan bir phishing programıdır. Bir sosyal mühendislik aracı olan ESPBug, yeni bir Wifi ağı oluşturarak kullanıcıların kimlik bilgilerini elde etmeyi hedefler.
 
-ESPBug is a rogue captive portal program which runs on the ESP8266 dev board, such as the NodeMCU (clones included). It is a social engennering tool which generates a WiFi network of a given name alluring people to connect  to it and enter some credential.
+# UYARI
+Bu repo'da açık bir şekilde verilen tüm kaynak kodlar eğitimsel amaçlar içindir. Kimlik hırsızlığı bulunduğunuz yere göre yasa dışı olabilir. Bu araç ile yaptığınız hiçbir eylemden sorumlu olmadığımı belirtirim. Bu kod hiçbir garanti ve emel ile verilmemiştir. **Dikkatli kullanın be yani. Tamam mı?**
 
-# DISCLAIMER
-The source code given in this public repo is for educational use only. Stealing credential might be illegal depending on where you live. I am not liable for any actions on your behalf. This code is given with no warranties and liabilities. **Just be responsible OK?**
-
-# Some updates about the project
-
-Life being as it is, I was not able to work on this project at all for the last 8 months, and maybe won't be able to for the next few. The project is not dead though, I am just unable to work on it now. Some issues have been submitted regarding the language.h library not being detected. I cannot say with certainty why that is, but if I remember it's just a question of checking your path. I hope to be able to come back to this project as soon as possible, thanks for your understanding.
-
-# Demonstration & How tos
+# Nasıl çalışır? & Nasıl yapılır?
 
 [![Pocket board for phishing passwords - ESPBUG](https://i.imgur.com/PYyQzfI.jpg)](https://www.youtube.com/watch?v=X95rtPqSzw4 "Pocket board for phishing passwords - ESPBUG - Click to Watch!")
 
+Aşağıda uygulama içerisinden alınan birkaç ekran görüntüsünü bulabilirsiniz. İlk ekran görüntüsü kurban tarafından görüntülenen ekrana aittir. **Peki siz şifrenizi girer miydiniz?**
 
-Here are a few screenshots from my phone showing off the web interface, and what each settings do. The fist image is an example of a captive portal seen by the victim. **Would you enter you password?**
-
-![Imgur0](https://i.imgur.com/FRVuEwBl.jpg)
+![Imgur0](https://i.imgur.com/q5C7H7s.png)
 ![Imgur1](https://i.imgur.com/qYyqwnQl.jpg)
 
-When you connect to the ESPBug, go to any domain name and to the **espportal** page (e.g. `http://espbug.com/espportal`)
-You should be shown a pop up window asking you for the password. Defaults are `Username: espbug` and `Password: password`.
-From there you are redirected to the home page.
+ESPBug'a bağlandığınız zaman, **espportal** sayfasına gidin. Bir user-pass prompt'u ile karşılaşacaksınız. Varsayılan kullanıcı adı şifre kombinasyonu `Kullanıcı adı: espbug` ve `Şifre: password` şeklindedir. Buradan sonra ana sayfaya yönlendirileceksiniz
 
 ![Imgur2](https://i.imgur.com/NgNZkYol.jpg)
 ![Imgur3](https://i.imgur.com/OgYxvRyl.jpg)
 
-
-You want to go to the settings to prepare the hook. Let's go through all the settings to understand what they do.
+Saldırıyı başlatmak için ayarlara gidip bazı düzenlemeler yapmanız gerekir. İhtiyacınız olacak tüm ayarlar ve açıklamaları aşağıda verilmiştir
 
 ![Imgur4](https://i.imgur.com/lxz6Apwl.jpg)
 ![Imgur5](https://i.imgur.com/LeBXPztl.jpg)
 
- - Hat colour (choices: **Black Hat** or **White Hat**): This gives you the object to be an arse or a crap arse. Basically the **White Hat** option redirects the victim to a webpage telling them what just happened and how to protect themselves against phishing attacks. The **Black Hat** immediately disconnects after the victim entered their credentials.
- - Enable portal (choices: **ON** or **OFF**): Basically enables the phishing portal.
- - SSID: Set up the SSID of the device. By default it is **espbug**. When a phishing attack occured, it defaults back to this name so you can connect and see the logs. You can name it what you want to lure victims.
- - Password: This is the WiFi's password. By default it is **password**, however, you want this blank when you are carrying an attack so victims can connect to the WiFi. Again, when an attack as succesfully happened, the password defaults back to **password**.
- **You can change these defalts in the source code - might add the option to change that in the settings if you ask for it.**
- - Channel (choices: **1** to **14**): This is the WiFi channel on the 2.4GHz so from 1 to 14.
- - Hidden (choices: **YES** or **NO**): **This is important!**  By default, the WiFi is hidden, that means to connect to the **espbug** you must manually enter the **ssid** and **password**. When an attack occured, the WiFi is hidden again, so you should connect to the device automatically with the same station. However, during an attack you want the WiFi to be visible, so set this to **NO**.
- - IP: This is the IP of the **espbug**. By default you can leave the `192.168.1.1`. However during an attack you might want to switch to `8.8.8.8`. This enables the victim's device to automatically show the sign up screen when they connect to the WiFi.
- - GateWay: Same as IP, keep these values the same.
- - Subnet: Do not change if you don't know what you're doing.
- - Username: Default is **espbug**. Put what you want. This is the username to enter when you connect to the webpage. To access the settings etc...
- - Password: Default is **password**. As the Username. Put what you want here.
+ - Şapka rengi (seçimler: **Black Hat** veya **White Hat**): Bu seçenek size bir hırsız mı yoksa bir fedai mi olacağınız hakkında seçim hakkı tanır. **White Hat** opsiyonu kullanıcıyı yaşadığı şeyin ne olduğunu ve phishing saldırılarından nasıl korunabileceğini anlatan bir siteye yönlendirir. **Black Hat** opsiyonu kullanıcı kimlik bilgilerini girdiği anda kullanıcının bağlantısını keser.
 
- - FTP: **STILL UNDER DEV.**, commented out for the moment
+ - Portalı etkinleştir (seçimler: **ON** veya **OFF**): Basitçe, portalı aktifleştirir. Her saldırıdan sonra tekrardan açılması gerekir.
+ - SSID: Oluşturulacak Wifi ağının ismini belirleyin. Varsayılan olarak wifi adı **espbug**'dır. Bir phishing saldırısından sonra wifi adını otomatik olarak varsayılan ismine geri döndürür. Bu sayede oltaya takılan bilgilere erişebilirsiniz.
+ - Password: Oluşturacağınız wifi ağının şifresidir. Varsayılan olarak şifre **espbug**'dır. Herhangi bir saldırı gerçekleştirirken bu kısmı boş bırakmak isteyebilirsiniz. Ve tekrardan, herhangi bir phishing saldırısından sonra parola kendini otomatik olarak varsayılana sıfırlar. **Bu ayarı kaynak kodundan değiştirebilirsiniz.**
+ - Kanal (seçimler: **1** - **14**): 2.4GHz bandında kanal seçmenize olanak tanır.
+ - Hidden (seçimler: **YES** veya **NO**) **Burası çokomelli!** Varsayılan olarak, Wifi ağı gizlidir. Yani **espbug**'a bağlanmak için **ssid ve şifre** bilgilerini manuel olarak girmelisiniz. Herhangi bir saldırıdan sonra wifi kendini otomatik olarak gizli moda alır. Phishing saldırılarından önce bu ayarı **NO**'ya getirmek isteyebilirsiniz.
+ - IP: **espbug**'ın IP adresi. Varsayılan olarak `192.168.1.1`'e ayarlıdır. Ancak herhangi bir saldırı durumunda bu ayarı `8.8.8.8` olacak şekilde değiştirebilirsiniz. Bu, kullanıcının otomatik olarak login ekranına yönlendirilmesini sağlar.
+ - Gateway: IP ile aynı, bu değerleri aynı tutun.
+ - Subnet: Sadece ne yaptığınızı biliyorsanız bu ayarı değiştirin
+ - Username: Web arayüzünün girişinde kullanılan kullanıcı adıdır. Varsayılan olarak **espbug**'dır.
+ - Password: Web arayüzünün girişinde kullanılan şifredir. Varsayılan olarak **espbug**'dır.
 
+# Kurulum
 
-# Installation
+Programın yazımı ve kurulumu için "atom ve pateformIO" kullanılmıştır. Ancak kurulumu sizler de kendiniz gerçekleştirebilirsiniz. Kodun eski versiyonunu Arduino IDE ile compile edebilirsiniz. [https://github.com/willmendil/ESPBug](https://github.com/willmendil/ESPBug). 
 
-To get information on the installation you can either try to figure it out by yourself. I use atom and plateformIO. or you can look at the old version which you can compile using the arduino IDE. [https://github.com/willmendil/ESPBug](https://github.com/willmendil/ESPBug). There is also a binary available in `/bin` that you should be able to simply upload on the board using the arduino IDE.
-
-
+Çevirmenin kurulum tavsiyesi:
+`/src` klasörü içerisindeki espbug.ino dosyasını Arduino IDE'si ile açın. Sizden ilgili ino dosyası için yeni bir klasör açmanızı isteyecek. Bu klasörü oluşturup `/src` klasörü içerisinde kalan diğer her şeyi yeni klasöre kopyalayın ve IDE üzerinden ESP8266 üzerine upload edin.
 
 
-# CREDITS where credit is due
+# CREDITS / İlham kaynakları
 
-Most of the code is strongly inspired by different repo from github, I just wanted to mention them here.
+Kodun çoğu farklı repo'lardan esinlenilmiştir. Burada onlara da değinmek istedim.
 * [ESPortalV2] - https://github.com/exploitagency/ESPortalV2
 * [github-ESPortal] - https://github.com/exploitagency/github-ESPortal
 * [esp8266_deauther] - https://github.com/spacehuhn/esp8266_deauther
-* and maybe more which I'll add if I remember
 
 
+### Bilinen Buglar
+- Beyaz şapka modunda DNS `8.8.8.8` iken  açıklama sayfası otomatik olarak kapanıyor. 
+- Bağlı cihazların IP adresi bazen yanlış şeyler gösterebiliyor.
 
-### Todos
-
- - Have FTP Working
- - Make more captive portal HTML pages
-
-### Known bugs
-- In white Hat mode, the explanation page is closed automatically when using `8.8.8.8`. Don't know yet how this can be fixed
-- There might be an issue with the IPs showing from the connected devices, they are all identical and sometimes erroneous.
-
-License
+Lisans
 ----
 
   GNU GENERAL PUBLIC LICENSE
 
 
-**Free Software, Hell Yeah!**
+**Ücretsiz Yazılım, Her zaman her yerde!**
 
 
    [ESPortalV2]: <https://github.com/exploitagency/ESPortalV2>
