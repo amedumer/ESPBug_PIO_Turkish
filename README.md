@@ -13,7 +13,7 @@
 ESPBug, ESP8266 tabanlı (NodeMCU gibi) kartlarda çalışan bir phishing programıdır. Bir sosyal mühendislik aracı olan ESPBug, yeni bir Wifi ağı oluşturarak kullanıcıların kimlik bilgilerini elde etmeyi hedefler.
 
 # UYARI
-Bu repo'da açık bir şekilde verilen tüm kaynak kodlar eğitimsel amaçlar içindir. Kimlik hırsızlığı bulunduğunuz yere göre yasa dışı olabilir. Bu araç ile yaptığınız hiçbir eylemden sorumlu olmadığımı belirtirim. Bu kod hiçbir garanti ve emel ile verilmemiştir. **Dikkatli kullanın be yani. Tamam mı?**
+Bu repo'da açık bir şekilde verilen tüm kaynak kodlar eğitimsel amaçlar içindir. Kimlik hırsızlığı bulunduğunuz yere göre yasa dışı olabilir. Bu araç ile yaptığınız hiçbir eylemden sorumlu olmadığımı belirtirim. Bu kod hiçbir garanti ve emel ile verilmemiştir. **Lütfen dikkatli kullanın. Tamam mı?**
 
 # Nasıl çalışır? & Nasıl yapılır?
 
@@ -39,7 +39,7 @@ Saldırıyı başlatmak için ayarlara gidip bazı düzenlemeler yapmanız gerek
 ![Imgur5](https://i.imgur.com/LeBXPztl.jpg)
 
 
- - Şapka rengi (seçimler: **Black Hat** veya **White Hat**): Bu seçenek size bir hırsız mı yoksa bir fedai mi olacağınız hakkında seçim hakkı tanır. **White Hat** opsiyonu kullanıcıyı yaşadığı şeyin ne olduğunu ve phishing saldırılarından nasıl korunabileceğini anlatan bir siteye yönlendirir. **Black Hat** opsiyonu kullanıcı kimlik bilgilerini girdiği anda kullanıcının bağlantısını keser.
+ - Şapka rengi (seçimler: **Black Hat** veya **White Hat**): Bu seçenek size bir hırsız mı yoksa bir bilgilendirici mi olacağınız hakkında seçim hakkı tanır. **White Hat** opsiyonu kullanıcıyı yaşadığı şeyin ne olduğunu ve phishing saldırılarından nasıl korunabileceğini anlatan bir siteye yönlendirir. **Black Hat** opsiyonu kullanıcı kimlik bilgilerini girdiği anda kullanıcının bağlantısını keser.
 
  - Portalı etkinleştir (seçimler: **ON** veya **OFF**): Basitçe, portalı aktifleştirir. Her saldırıdan sonra tekrardan açılması gerekir.
  - SSID: Oluşturulacak Wifi ağının ismini belirleyin. Varsayılan olarak wifi adı **espbug**'dır. Bir phishing saldırısından sonra wifi adını otomatik olarak varsayılan ismine geri döndürür. Bu sayede oltaya takılan bilgilere erişebilirsiniz.
